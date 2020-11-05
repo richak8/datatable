@@ -12,9 +12,9 @@ const paginator = (result) => {
 
 const limitChange = () => {
     limit = Number(selectLimit.value);
-    const tableRowData = records.slice(offset, offset+limit);
-    paginator(tableRowData);
-    replaceBodyContent(tableRowData, tbody);
+    const rowData = records.slice(offset, offset+limit);
+    replaceBodyContent(rowData, tbody);
+    tableRowData = rowData;
 }
 
 const paginatorDataHandler = (offset) => {

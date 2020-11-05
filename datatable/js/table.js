@@ -204,7 +204,7 @@ const tableConfigration = () => {
 const searchData = (e) => {
     const val = e.target.value.toLowerCase();
 
-    const filteredData = tableRowData.filter(row => {
+    const filteredData = records.filter(row => {
         return row.name.toLowerCase().includes(val) ||
             row.capital.toLowerCase().includes(val) ||
             row.region.toLowerCase().includes(val) || 
