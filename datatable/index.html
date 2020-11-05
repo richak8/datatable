@@ -1,11 +1,15 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <title>Datatable</title>
         <link rel="stylesheet" href="./css/index.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <main class="main">
+        <header>
             <h1 class="heading">Data Table</h1>
+        </header>
+        <main class="main">
             <section class="tableConfig">
                 <h2>Choose Table Configuration</h2>
                 <form name="form" onsubmit="return false;">
@@ -31,19 +35,19 @@
                     <div class="filterableCol">
                         <span>Filterable Columns:</span>
                         <div>
-                            <input type="checkbox" id="name" name="filterableCol" value="name"  checked>
+                            <input type="checkbox" id="fname" name="filterableCol" value="name"  checked>
                             <label for="name">Name</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="capital" name="filterableCol" value="capital" checked>
+                            <input type="checkbox" id="fcapital" name="filterableCol" value="capital" checked>
                             <label for="capital">Capital</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="region" name="filterableCol" value="region" checked>
+                            <input type="checkbox" id="fregion" name="filterableCol" value="region" checked>
                             <label for="region">Continent</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="currencies" name="filterableCol" value="currencies" checked>
+                            <input type="checkbox" id="fcurrencies" name="filterableCol" value="currencies" checked>
                             <label for="currencies">Currencies</label>
                         </div>
                     </div>

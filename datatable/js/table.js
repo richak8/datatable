@@ -35,11 +35,11 @@ const fetchData = async() => {
 // table
 const createTable = (result) => {
     // Entries selection is only enlabed in the case of paginator true    
-    isPaginated &&  selectEntries.classList.add('display');
+    isPaginated &&  selectEntries.classList.add('flex');
     isPaginated &&  pagination.classList.add('flex');
 
     //isPaginated is false
-    !isPaginated &&  selectEntries.classList.remove('display');
+    !isPaginated &&  selectEntries.classList.remove('flex');
     !isPaginated &&  pagination.classList.remove('flex');
 
     // when result length is greater than zero
@@ -161,6 +161,7 @@ const handleFilter = (name, value) => {
     replaceBodyContent(filteredData, tbody);
 }
 
+// Columns Sorting
 const getSortableColumns = (th, key) => {
     appendChild(th,getImage(arrowImg, 'down', sortDataOnDownArrowClick(key)));
     appendChild(th,getImage(arrowImg, 'up', sortDataOnUpArrowClick(key)));
@@ -214,10 +215,6 @@ const searchData = (e) => {
 
 eleSelector('#search').addEventListener('input', (e) => {
     searchData(e, 'search');
-});
-
-eleSelector('.imgWrapper').addEventListener('click', () => {
-    filterData();
 });
 
 const buttonHander = () => {

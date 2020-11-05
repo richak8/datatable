@@ -3,6 +3,7 @@ body {
 	margin: 0;
     padding: 0;
     color: #666;
+    overflow: auto;
 }
 
 table {
@@ -32,6 +33,12 @@ h1, h2 {
     align-items: center;
 }
 
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 600px;
+}
 
 tbody {
     overflow: auto;
@@ -49,6 +56,10 @@ th {
     position: relative;
     background-color: #f4f4f4;
 }
+
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+ }
 
 img {
     width: 30px;
@@ -73,6 +84,8 @@ img {
 .searchWrapper {
     display: none;
     position: relative;
+    border: 1px solid #ebebeb;
+    width: 35%;
 }
 
 .imgWrapper {
@@ -85,19 +98,19 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
 }
 
 .search {
-    width: 450px;
     padding: 15px;
     font-size: 16px;
-    border: 1px solid #ebebeb;
-    border-radius: 6px;
+    width: 93.5%;
+    border: 0;
 }
 
 .selectEntries {
     display: none;
+    align-items: center;
+    width: 25%;
 }
 
 .selectEntries select {
@@ -105,6 +118,11 @@ img {
     height: 30px;
     font-size: 14px;
     border: 1px solid #ebebeb;
+    background-color: #f4f4f4;
+}
+
+.selectEntries span {
+    margin: 0 5px;
 }
 
 .colFilter {
@@ -129,6 +147,7 @@ img {
 .sortableCol, .filterableCol, .fixedHeader, .paginationChk {
     display: flex;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .button {
@@ -187,4 +206,23 @@ img {
 
 .flex {
     display: flex;
+}
+
+@media screen and (max-width: 767px) {
+    .searchWrapper {
+        width: 51%;
+    }
+    .selectEntries {
+        width: 47%;
+    }
+    .selectEntries span { 
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .colFilter {
+        margin: 0
+    }
 }

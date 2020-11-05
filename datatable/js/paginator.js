@@ -26,6 +26,8 @@ const onPrev = () => {
     offset -= limit;
     if(offset === 0) {
         prevBtn.classList.add('disable');
+    } else if(total - limit > offset) {
+        nextBtn.classList.remove('disable');
     } else {
         prevBtn.classList.remove('disable');
     }
@@ -34,13 +36,12 @@ const onPrev = () => {
 
 const onNext = () => {
     offset += limit;
-    if(offset === total - 5) {
+    if(offset === total - limit) {
         nextBtn.classList.add('disable');
+    } else if(offset > 0) {
+        prevBtn.classList.remove('disable');
     } else {
         nextBtn.classList.remove('disable');
-    }
-    if(offset > 0) {
-        prevBtn.classList.remove('disable');
     }
     paginatorDataHandler(offset);
 }
