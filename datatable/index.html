@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <main class="main">
+            <h1 class="heading">Data Table</h1>
+            <section class="tableConfig">
+                <h2>Choose Table Configuration</h2>
+                <form name="form" onsubmit="return false;">
+                    <div class="sortableCol">
+                        <span>Sortable Columns: </span>
+                        <div>
+                            <input type="checkbox" id="name" name="sortableCol" value="name" checked>
+                            <label for="name">Name</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="capital" name="sortableCol" value="capital" checked>
+                            <label for="capital">Capital</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="region" name="sortableCol" value="region" checked>
+                            <label for="region">Continent</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="currencies" name="sortableCol" value="currencies" checked>
+                            <label for="currencies">Currencies</label>
+                        </div>
+                    </div>
+                    <div class="filterableCol">
+                        <span>Filterable Columns:</span>
+                        <div>
+                            <input type="checkbox" id="name" name="filterableCol" value="name"  checked>
+                            <label for="name">Name</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="capital" name="filterableCol" value="capital" checked>
+                            <label for="capital">Capital</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="region" name="filterableCol" value="region" checked>
+                            <label for="region">Continent</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="currencies" name="filterableCol" value="currencies" checked>
+                            <label for="currencies">Currencies</label>
+                        </div>
+                    </div>
+                    <div class="fixedHeader">
+                        <input type="checkbox" id="fixedHeader" name="fixedHeader" value="true" checked>
+                        <label for="fixedHeader">Fixed Header</label>
+                    </div>
+                    <div class="paginationChk">
+                        <input type="checkbox" id="paginationChk" name="pagination" value="true" checked>
+                        <label for="paginationChk">Pagination</label>
+                    </div>
+                </form>
+                <button class="button" id="button" onclick="buttonHander()">Submit</button>
+            </section>  
+            <section>
+                <div class="loader">Loading...</div>
+                <div class="filters">
+                    <div class="selectEntries">
+                        <span>Show </span> 
+                        <select id="selectLimit">
+                            <option value="5">5</option>
+                            <option value="10" onchange="onselect()">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select> 
+                        <span>Entries</span> 
+                    </div> 
+                    <div class="searchWrapper">  
+                        <input type="text" placeholder="Search" id="search" class="search"></input>
+                        <div class="imgWrapper"><img src="./images/search.svg" alt="search"></div>
+                    </div> 
+                </div>
+                <div class="tableContainer"></div>
+                <div class="pagination">
+                    <div class="prev disable">prev</div>
+                    <div class="next">Next</div>
+                </div>
+            </section>      
+        </main>
+        <script type="text/javascript" defer src="./js/utils.js"></script>
+        <script type="text/javascript" defer src="./js/constants.js"></script>
+        <script type="text/javascript" defer src="./js/table.js"></script>
+        <script type="text/javascript" defer src="./js/paginator.js"></script>
+    </body>
+</html>
