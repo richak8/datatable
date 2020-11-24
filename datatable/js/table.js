@@ -213,9 +213,7 @@ const searchData = (e) => {
     replaceBodyContent(filteredData, tbody);
 }
 
-eleSelector('#search').addEventListener('input', (e) => {
-    searchData(e, 'search');
-});
+eleSelector('#search').addEventListener('input', debounce(searchData,6000));
 
 const buttonHander = () => {
     loaderHandler();

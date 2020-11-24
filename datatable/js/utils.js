@@ -50,3 +50,11 @@ const sortData = (key, order = 'asc') => (next, current) => {
 
     return order === 'desc' ? comparisonVal * -1 : comparisonVal;
 }
+
+const debounce = (fn, delay) => {
+    let timeout;
+    return (...args) => {
+        if(timeout) clearTimeout(timeout);
+        timeout = setTimeout(() => fn(...args), delay);
+    }
+}
